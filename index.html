@@ -303,7 +303,6 @@
       gap: 20px;
     }
 
-    /* ===== Pro member layout with photo ===== */
     .committee-member {
       display: flex;
       gap: 14px;
@@ -505,10 +504,85 @@
       .about-content, .dates-container, .committee-section { padding: 30px 25px; }
       .topics-grid, .committee-grid { grid-template-columns: 1fr; }
       .cta-section h2 { font-size: 2rem; }
-
       .member-avatar { width: 42px; height: 42px; flex: 0 0 42px; }
       .member-name { font-size: 1rem; }
       .member-affiliation { font-size: 0.92rem; }
+    }
+
+    /* ══════════════════════════════════════════
+       program SECTION — NEW STYLES
+    ══════════════════════════════════════════ */
+    #program { background: var(--dark) !important; }
+    #program .section-title { color: white; }
+    #program .section-title::after { background: var(--accent); }
+    #program .section-subtitle { color: var(--accent); }
+
+    .prog-timeline { margin-top: 50px; position: relative; }
+    .prog-timeline::before { content: ''; position: absolute; left: 90px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), rgba(198,156,109,0.05)); }
+
+    .prog-block { display: flex; gap: 0; position: relative; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.25s; }
+    .prog-block:hover { background: rgba(255,255,255,0.025); border-radius: 6px; }
+
+    .prog-time { min-width: 90px; font-family: 'Libre Baskerville', serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); padding-top: 6px; text-align: right; flex-shrink: 0; }
+
+    .prog-dot { position: absolute; left: 83px; top: 30px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--dark); z-index: 2; transition: transform 0.2s; }
+    .prog-block:hover .prog-dot { transform: scale(1.3); }
+    .prog-break .prog-dot { background: #4a5a6a; }
+    .prog-keynote .prog-dot { background: #f5c842; width: 22px; height: 22px; left: 80px; top: 27px; box-shadow: 0 0 12px rgba(245,200,66,0.5); }
+    .prog-roundtable .prog-dot { background: #d98fe0; box-shadow: 0 0 10px rgba(217,143,224,0.4); }
+    .prog-parallel .prog-dot { background: #6fdba8; box-shadow: 0 0 10px rgba(111,219,168,0.4); }
+    .prog-closing .prog-dot { background: #f08080; }
+
+    .prog-content { flex: 1; padding-left: 42px; }
+
+    .prog-tag { display: inline-block; padding: 3px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px; }
+    .tag-plenary   { background: rgba(26,61,92,0.7);    color: #7cb3e0; border: 1px solid rgba(124,179,224,0.4); }
+    .tag-break     { background: rgba(74,90,106,0.4);   color: #889aa8; border: 1px solid rgba(136,154,168,0.3); }
+    .tag-roundtable{ background: rgba(139,70,140,0.25); color: #d98fe0; border: 1px solid rgba(217,143,224,0.4); }
+    .tag-keynote   { background: rgba(198,156,50,0.15); color: #f5c842; border: 1px solid rgba(245,200,66,0.4); }
+    .tag-parallel  { background: rgba(60,140,100,0.25); color: #6fdba8; border: 1px solid rgba(111,219,168,0.4); }
+    .tag-closing   { background: rgba(200,60,60,0.25);  color: #f08080; border: 1px solid rgba(240,128,128,0.4); }
+
+    .prog-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: white; margin-bottom: 5px; }
+    .prog-speaker { color: var(--accent); font-size: 0.93rem; margin-bottom: 4px; }
+    .prog-room { color: rgba(255,255,255,0.38); font-size: 0.82rem; font-style: italic; margin-top: 4px; }
+
+    .prog-rt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 14px; }
+    .prog-rt-item { display: flex; gap: 12px; background: rgba(139,70,140,0.1); border: 1px solid rgba(217,143,224,0.15); border-radius: 6px; padding: 12px 14px; align-items: flex-start; transition: all 0.2s; }
+    .prog-rt-item:hover { background: rgba(139,70,140,0.22); border-color: rgba(217,143,224,0.4); transform: translateY(-2px); }
+    .prog-rt-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(217,143,224,0.2); color: #d98fe0; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0; margin-top: 2px; }
+    .prog-rt-company { color: #d98fe0; font-weight: 700; font-size: 0.88rem; }
+    .prog-rt-name { color: rgba(255,255,255,0.9); font-weight: 600; font-size: 0.92rem; margin-top: 3px; }
+    .prog-rt-desc { color: rgba(255,255,255,0.48); font-size: 0.8rem; margin-top: 2px; font-style: italic; }
+
+    .prog-keynote-box { background: rgba(245,200,66,0.07); border: 1px solid rgba(245,200,66,0.2); border-radius: 6px; padding: 18px 22px; margin: 12px 0 8px; }
+    .prog-keynote-theme { color: rgba(255,255,255,0.65); font-style: italic; font-size: 0.95rem; margin-bottom: 10px; }
+    .prog-keynote-name { color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
+    .prog-keynote-affil { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+    .prog-keynote-quote { color: rgba(255,255,255,0.8); font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(245,200,66,0.15); font-size: 0.93rem; }
+
+    .prog-sessions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-top: 14px; }
+    .prog-session-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .prog-session-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .prog-session-header { padding: 10px 16px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.8px; text-transform: uppercase; }
+    .s1 { background: rgba(26,82,118,0.8);  color: #7cb3e0; border-bottom: 2px solid #7cb3e0; }
+    .s2 { background: rgba(108,52,131,0.8); color: #d98fe0; border-bottom: 2px solid #d98fe0; }
+    .s3 { background: rgba(30,132,73,0.8);  color: #6fdba8; border-bottom: 2px solid #6fdba8; }
+    .prog-session-theme { padding: 12px 16px 4px; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: white; line-height: 1.3; }
+    .prog-session-chair { padding: 4px 16px 10px; color: var(--accent); font-size: 0.82rem; font-style: italic; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .prog-session-papers { list-style: none; padding: 10px 16px 14px; }
+    .prog-session-papers li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .prog-session-papers li:last-child { border-bottom: none; }
+    .paper-title { color: rgba(255,255,255,0.82); font-size: 0.86rem; line-height: 1.4; }
+    .paper-authors { color: rgba(255,255,255,0.42); font-size: 0.76rem; margin-top: 3px; }
+
+    @media (max-width: 768px) {
+      .prog-timeline::before { left: 56px; }
+      .prog-time { min-width: 56px; font-size: 0.95rem; }
+      .prog-dot { left: 49px; }
+      .prog-keynote .prog-dot { left: 46px; }
+      .prog-content { padding-left: 28px; }
+      .prog-rt-grid, .prog-sessions-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -534,6 +608,7 @@
       <a href="#about">About</a>
       <a href="#topics">Topics</a>
       <a href="#committees">Committees</a>
+      <a href="#program">program</a>
       <a href="#dates">Important Dates</a>
       <a href="#submission">Submission</a>
       <a href="#registration">Registration</a>
@@ -1062,6 +1137,272 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════
+       program — NEW SECTION
+  ═══════════════════════════════════════ -->
+  <section id="program" class="section">
+    <div class="container">
+
+      <h2 class="section-title">program</h2>
+      <p class="section-subtitle">24 April 2026 · INSEEC Grande École Bordeaux · Room D304 (Plenary) &amp; D305 / D302 / D303 (Parallel)</p>
+
+      <div class="prog-timeline">
+
+        <!-- 08:30 -->
+        <div class="prog-block prog-break">
+          <div class="prog-time">08:30</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-break">☕ Break</span>
+            <div class="prog-title">Welcome &amp; Coffee</div>
+            <div class="prog-room">Room D301</div>
+          </div>
+        </div>
+
+        <!-- 09:00 -->
+        <div class="prog-block prog-plenary">
+          <div class="prog-time">09:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-plenary">🎤 Plenary</span>
+            <div class="prog-title">Welcome Address</div>
+            <div class="prog-speaker">Aziz Zraoula — Director INSEEC</div>
+            <div class="prog-room">Room D304 · 15 min</div>
+          </div>
+        </div>
+
+        <!-- 09:15 -->
+        <div class="prog-block prog-plenary">
+          <div class="prog-time">09:15</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-plenary">🎤 Plenary</span>
+            <div class="prog-title">program Presentation</div>
+            <div class="prog-speaker">Aymen Ammari — Organising Committee</div>
+            <div class="prog-room">Room D304 · 15 min</div>
+          </div>
+        </div>
+
+        <!-- 09:30 -->
+        <div class="prog-block prog-plenary">
+          <div class="prog-time">09:30</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-plenary">🏛️ Institutional</span>
+            <div class="prog-title">Policy Framework &amp; Transition Challenges</div>
+            <div class="prog-speaker">Regional Representative — Nouvelle-Aquitaine Regional Authority</div>
+            <div class="prog-room">Room D304 · 30 min</div>
+          </div>
+        </div>
+
+        <!-- 10:00 -->
+        <div class="prog-block prog-plenary">
+          <div class="prog-time">10:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-plenary">🔬 Scientific</span>
+            <div class="prog-title">Transition Pathways &amp; Territorial Cooperation</div>
+            <div class="prog-speaker">Louis Dupuy — APESA, Université de Bordeaux</div>
+            <div class="prog-room">Room D304 · 20 min</div>
+          </div>
+        </div>
+
+        <!-- 10:20 -->
+        <div class="prog-block prog-break">
+          <div class="prog-time">10:20</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-break">☕ Break</span>
+            <div class="prog-title">Coffee Break</div>
+            <div class="prog-room">Room D301</div>
+          </div>
+        </div>
+
+        <!-- 10:30 Round Table -->
+        <div class="prog-block prog-roundtable">
+          <div class="prog-time">10:30</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-roundtable">🗣️ Round Table</span>
+            <div class="prog-title">Sustainability in Practice — Roundtable Discussion</div>
+            <div class="prog-speaker">Chair: Jean-Marie Cardebat &nbsp;·&nbsp; Room D304 &nbsp;·&nbsp; until 12:00</div>
+            <div class="prog-rt-grid">
+              <div class="prog-rt-item">
+                <div class="prog-rt-num">1</div>
+                <div>
+                  <div class="prog-rt-company">Greenaffair</div>
+                  <div class="prog-rt-name">Romain Vignolles</div>
+                  <div class="prog-rt-desc">Agency Director, South-West — ESG advisory &amp; consulting</div>
+                </div>
+              </div>
+              <div class="prog-rt-item">
+                <div class="prog-rt-num">2</div>
+                <div>
+                  <div class="prog-rt-company">Vivance</div>
+                  <div class="prog-rt-name">Mathilde Flouroux Larrat &amp; Clément Garnung</div>
+                  <div class="prog-rt-desc">Engineering territorial cooperation</div>
+                </div>
+              </div>
+              <div class="prog-rt-item">
+                <div class="prog-rt-num">3</div>
+                <div>
+                  <div class="prog-rt-company">NEPSEN</div>
+                  <div class="prog-rt-name">Olivier Papin</div>
+                  <div class="prog-rt-desc">CSR strategy</div>
+                </div>
+              </div>
+              <div class="prog-rt-item">
+                <div class="prog-rt-num">4</div>
+                <div>
+                  <div class="prog-rt-company">AMASISA</div>
+                  <div class="prog-rt-name">Rémy Frissant</div>
+                  <div class="prog-rt-desc">Agro-ecological approach</div>
+                </div>
+              </div>
+              <div class="prog-rt-item">
+                <div class="prog-rt-num">5</div>
+                <div>
+                  <div class="prog-rt-company">Château Barateau &amp; Lafon</div>
+                  <div class="prog-rt-name">Tatiana Gonçalves Matado</div>
+                  <div class="prog-rt-desc">CSR initiatives</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12:00 -->
+        <div class="prog-block prog-break">
+          <div class="prog-time">12:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-break">🍽️ Lunch</span>
+            <div class="prog-title">Lunch Break</div>
+            <div class="prog-room">Room D301</div>
+          </div>
+        </div>
+
+        <!-- 14:00 Keynote -->
+        <div class="prog-block prog-keynote">
+          <div class="prog-time">14:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-keynote">⭐ Keynote</span>
+            <div class="prog-title">Keynote Lecture &amp; Open Discussion</div>
+            <div class="prog-keynote-box">
+              <div class="prog-keynote-theme">Circular economy, industrial ecology &amp; territorial cooperation</div>
+              <div class="prog-keynote-name">Nicolas Antheaume</div>
+              <div class="prog-keynote-affil">Professor of Accounting for Sustainable Development and the Circular Economy — Nantes University, France</div>
+              <div class="prog-keynote-quote">"Cooperation as a lever for the ecological transition of territories"</div>
+            </div>
+            <div class="prog-room">Room D304 · 90 min</div>
+          </div>
+        </div>
+
+        <!-- 15:30 -->
+        <div class="prog-block prog-break">
+          <div class="prog-time">15:30</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-break">☕ Break</span>
+            <div class="prog-title">Coffee Break</div>
+            <div class="prog-room">Room D301</div>
+          </div>
+        </div>
+
+        <!-- 16:00 Parallel Sessions -->
+        <div class="prog-block prog-parallel">
+          <div class="prog-time">16:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-parallel">📊 Parallel Sessions</span>
+            <div class="prog-title">Parallel Academic Sessions — 3 Simultaneous Tracks</div>
+            <div class="prog-sessions-grid">
+
+              <div class="prog-session-card">
+                <div class="prog-session-header s1">S1 — Room D305</div>
+                <div class="prog-session-theme">ESG, Financial Markets &amp; Risk</div>
+                <div class="prog-session-chair">Chair: Massane Chafik</div>
+                <ul class="prog-session-papers">
+                  <li>
+                    <div class="paper-title">Green Hiring and Carbon Disclosure Mandate: Do Product Market Competitiveness and Financial Constraints Matter?</div>
+                    <div class="paper-authors">Xiang Wei, Tianshu Zhao, Raghav Malhotra</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">ESG Branding and Cost of Capital: Visibility, Communication Intensity, and Reputation Effects</div>
+                    <div class="paper-authors">Massane Chafik, Sonia Bougatfa</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">Is Larger Institutional Distance Associated with Greater Competitive Aggressiveness? A Configurational Analysis</div>
+                    <div class="paper-authors">Nagy Gabor</div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="prog-session-card">
+                <div class="prog-session-header s2">S2 — Room D302</div>
+                <div class="prog-session-theme">CSR, Governance &amp; Disclosure</div>
+                <div class="prog-session-chair">Chair: Siham Zraoula-Bikourane</div>
+                <ul class="prog-session-papers">
+                  <li>
+                    <div class="paper-title">Board Gender Diversity and ESG Disclosure Quality: Causal Evidence from the European Quota Directive</div>
+                    <div class="paper-authors">Siham Zraoula-Bikourane</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">Actions Speak Louder Than Words: Direct and Indirect Effects of CSR Authenticity on Internal Whistleblowing</div>
+                    <div class="paper-authors">Youssef Souak, Monica Riviere, Facundo Garcia Pereyra</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">CSR Communication and Firm Value in Luxury Markets: The Luxury-Sustainability Double Paradox</div>
+                    <div class="paper-authors">Hanen Kooli-Chaabane, Jacques Hendieh, Mohamed Firas Thraya</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">Entrepreneurial Interest in Lake Protection and Restoration: Cross-Country Analysis</div>
+                    <div class="paper-authors">Wissal Ben Arfi &amp; Alexandru Capatina</div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="prog-session-card">
+                <div class="prog-session-header s3">S3 — Room D303</div>
+                <div class="prog-session-theme">Sustainability, Strategy &amp; Institutions</div>
+                <div class="prog-session-chair">Chair: Mahmoud Hassan</div>
+                <ul class="prog-session-papers">
+                  <li>
+                    <div class="paper-title">Green Policies and Inflation Risks in the Eurozone</div>
+                    <div class="paper-authors">Mahmoud Hassan, Ji-Yong Leeb, Marc Kouzezc</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">ESG Performance and Corporate Debt Maturity in France</div>
+                    <div class="paper-authors">Zeinab Ghamloush, Éric Séverin, Annie Bellier</div>
+                  </li>
+                  <li>
+                    <div class="paper-title">Revisiting the CSR-Innovation-Financial Performance Nexus: The Role of Frugal Innovation</div>
+                    <div class="paper-authors">Vipin Mogha, Rania Beji</div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 17:00 -->
+        <div class="prog-block prog-closing">
+          <div class="prog-time">17:00</div>
+          <div class="prog-dot"></div>
+          <div class="prog-content">
+            <span class="prog-tag tag-closing">🏁 Closing</span>
+            <div class="prog-title">Closing Remarks &amp; Discussion</div>
+            <div class="prog-speaker">Future Research Directions &amp; Special Issue Announcement</div>
+            <div class="prog-room">Room D304</div>
+          </div>
+        </div>
+
+      </div><!-- end .prog-timeline -->
+    </div>
+  </section>
+
   <!-- Dates -->
   <section id="dates" class="section" style="background:#fafaf8;">
     <div class="container">
@@ -1112,46 +1453,46 @@
       <div class="info-box">
         <h3>Special Issue – Bankers, Markets and Investors</h3>
         <p>A selection of high-quality papers presented at the conference will be invited to submit to a <strong>Special Issue</strong> of the journal <em>Bankers, Markets and Investors</em>.</p>
-        <p><strong>Special Issue Title:</strong> “Sustainability, Uncertainty, and Investment Decisions: Institutions, Information, and Market Responses”</p>
-        <p>All submissions will follow the journal’s standard peer-review process.</p>
+        <p><strong>Special Issue Title:</strong> "Sustainability, Uncertainty, and Investment Decisions: Institutions, Information, and Market Responses"</p>
+        <p>All submissions will follow the journal's standard peer-review process.</p>
 
-<p style="margin-top:15px;">
-  <strong>
-    Guest Editors (Special Issue – Bankers, Markets and Investors):<br>
-    Aymen Ammari &amp; Hachmi Ben Ameur
-  </strong>
-</p>
+        <p style="margin-top:15px;">
+          <strong>
+            Guest Editors (Special Issue – Bankers, Markets and Investors):<br>
+            Aymen Ammari &amp; Hachmi Ben Ameur
+          </strong>
+        </p>
       </div>
     </div>
   </section>
 
-<section id="registration" class="section">
-  <div class="container">
-    <h2 class="section-title">Registration</h2>
-    <p class="section-subtitle">
-      Registration for the conference is open to researchers and practitioners
-    </p>
-
-    <div class="info-box" style="text-align:center;">
-      <p style="font-size:1.1rem;">
-        Please register using the online form below.
-        Registration is required for all participants.
+  <section id="registration" class="section">
+    <div class="container">
+      <h2 class="section-title">Registration</h2>
+      <p class="section-subtitle">
+        Registration for the conference is open to researchers and practitioners
       </p>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFfzACIE07FmRAIaufyw39iUo0KaHMpBze-FXRFehZ5-l5oQ/viewform?usp=header"
-         target="_blank"
-         rel="noopener"
-         class="cta-button"
-         style="margin-top:25px; display:inline-block;">
-        Register via Google Form
-      </a>
+      <div class="info-box" style="text-align:center;">
+        <p style="font-size:1.1rem;">
+          Please register using the online form below.
+          Registration is required for all participants.
+        </p>
 
-      <p style="margin-top:20px; font-size:0.95rem; color:var(--secondary);">
-        The information collected will be used solely for organizational purposes.
-      </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFfzACIE07FmRAIaufyw39iUo0KaHMpBze-FXRFehZ5-l5oQ/viewform?usp=header"
+           target="_blank"
+           rel="noopener"
+           class="cta-button"
+           style="margin-top:25px; display:inline-block;">
+          Register via Google Form
+        </a>
+
+        <p style="margin-top:20px; font-size:0.95rem; color:var(--secondary);">
+          The information collected will be used solely for organizational purposes.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Venue -->
   <section id="venue" class="section" style="background:#fafaf8;">
